@@ -1,1088 +1,546 @@
-<!DOCTYPE html><!DOCTYPE html>
-
-<html lang="en"><html lang="en">
-
-<head><head>
-
-    <meta charset="UTF-8">    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Answers to All Questions Serially - Mathematical Solutions</title>    <title>Answers to All Questions Serially - Mathematical Solutions</title>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Answers to All Questions Serially - Mathematical Solutions</title>
+    
+    <!-- MathJax Configuration -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
         
-
-    <!-- MathJax Configuration -->    <!-- MathJax Configuration -->
-
-    <script>    <script>
-
-        MathJax = {        MathJax = {
-
-            tex: {            tex: {
-
-                inlineMath: [['$', '$'], ['\\(', '\\)']],                inlineMath: [['$', '$'], ['\\(', '\\)']],
-
-                displayMath: [['$$', '$$'], ['\\[', '\\]']]                displayMath: [['$$', '$$'], ['\\[', '\\]']]
-
-            },            },
-
-            svg: {            svg: {
-
-                fontCache: 'global'                fontCache: 'global'
-
-            }            }
-
-        };        };
-
-    </script>    </script>
-
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
         
-
-    <style>    <style>
-
-        * {        body {
-
-            box-sizing: border-box;            font-family: 'Times New Roman', serif;
-
-        }            line-height: 1.6;
-
-                    margin: 0;
-
-        body {            padding: 20px;
-
-            font-family: 'Times New Roman', serif;            background-color: #f9f9f9;
-
-            line-height: 1.6;            color: #333;
-
-            margin: 0;        }
-
-            padding: 10px;        
-
-            background-color: #f9f9f9;        .container {
-
-            color: #333;            max-width: 1200px;
-
-            font-size: 16px;            margin: 0 auto;
-
-        }            background-color: white;
-
-                    padding: 30px;
-
-        .container {            border-radius: 10px;
-
-            max-width: 1200px;            box-shadow: 0 0 20px rgba(0,0,0,0.1);
-
-            margin: 0 auto;        }
-
-            background-color: white;        
-
-            padding: 15px;        h1 {
-
-            border-radius: 10px;            text-align: center;
-
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);            color: #2c3e50;
-
-        }            border-bottom: 3px solid #3498db;
-
-                    padding-bottom: 10px;
-
-        h1 {            margin-bottom: 30px;
-
-            text-align: center;        }
-
-            color: #2c3e50;        
-
-            border-bottom: 3px solid #3498db;        h2 {
-
-            padding-bottom: 10px;            color: #e74c3c;
-
-            margin-bottom: 30px;            border-left: 5px solid #e74c3c;
-
-            font-size: 24px;            padding-left: 15px;
-
-        }            margin-top: 40px;
-
-                    margin-bottom: 20px;
-
-        h2 {        }
-
-            color: #e74c3c;        
-
-            border-left: 5px solid #e74c3c;        h3 {
-
-            padding-left: 15px;            color: #8e44ad;
-
-            margin-top: 40px;            margin-top: 25px;
-
-            margin-bottom: 20px;            margin-bottom: 15px;
-
-            font-size: 20px;        }
-
-        }        
-
-                .question-part {
-
-        h3 {            background-color: #ecf0f1;
-
-            color: #8e44ad;            padding: 15px;
-
-            margin-top: 25px;            border-radius: 5px;
-
-            margin-bottom: 15px;            margin: 15px 0;
-
-            font-size: 18px;        }
-
-        }        
-
-                .solution {
-
-        h4 {            background-color: #f8f9fa;
-
-            color: #2c3e50;            padding: 20px;
-
-            margin-top: 20px;            border-left: 4px solid #28a745;
-
-            margin-bottom: 10px;            margin: 15px 0;
-
-            font-size: 16px;        }
-
-        }        
-
-                table {
-
-        .question-part {            width: 100%;
-
-            background-color: #ecf0f1;            border-collapse: collapse;
-
-            padding: 15px;            margin: 20px 0;
-
-            border-radius: 5px;            background-color: white;
-
-            margin: 15px 0;            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-
-        }        }
-
-                
-
-        .solution {        th, td {
-
-            background-color: #f8f9fa;            border: 1px solid #ddd;
-
-            padding: 20px;            padding: 12px;
-
-            border-left: 4px solid #28a745;            text-align: center;
-
-            margin: 15px 0;        }
-
-        }        
-
-                th {
-
-        table {            background-color: #3498db;
-
-            width: 100%;            color: white;
-
-            border-collapse: collapse;            font-weight: bold;
-
-            margin: 20px 0;        }
-
-            background-color: white;        
-
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);        tr:nth-child(even) {
-
-            font-size: 14px;            background-color: #f2f2f2;
-
-        }        }
-
-                
-
-        th, td {        tr:hover {
-
-            border: 1px solid #ddd;            background-color: #e8f4f8;
-
-            padding: 8px;        }
-
-            text-align: center;        
-
-            word-wrap: break-word;        .algorithm {
-
-        }            background-color: #fff3cd;
-
-                    border: 1px solid #ffeaa7;
-
-        th {            padding: 20px;
-
-            background-color: #3498db;            border-radius: 5px;
-
-            color: white;            margin: 15px 0;
-
-            font-weight: bold;        }
-
-            font-size: 12px;        
-
-        }        .algorithm ol {
-
-                    margin: 0;
-
-        tr:nth-child(even) {            padding-left: 20px;
-
-            background-color: #f2f2f2;        }
-
-        }        
-
-                .equation-block {
-
-        tr:hover {            text-align: center;
-
-            background-color: #e8f4f8;            margin: 20px 0;
-
-        }            padding: 15px;
-
-                    background-color: #f8f9fa;
-
-        .algorithm {            border-radius: 5px;
-
-            background-color: #fff3cd;        }
-
-            border: 1px solid #ffeaa7;        
-
-            padding: 20px;        .properties {
-
-            border-radius: 5px;            background-color: #e8f5e8;
-
-            margin: 15px 0;            padding: 15px;
-
-        }            border-radius: 5px;
-
-                    margin: 10px 0;
-
-        .algorithm ol {        }
-
-            margin: 0;        
-
-            padding-left: 20px;        .properties ul {
-
-        }            margin: 0;
-
-                    padding-left: 20px;
-
-        .algorithm li {        }
-
-            margin-bottom: 8px;        
-
-        }        .note {
-
-                    background-color: #fff3cd;
-
-        .equation-block {            border-left: 4px solid #ffc107;
-
-            text-align: center;            padding: 10px 15px;
-
-            margin: 20px 0;            margin: 15px 0;
-
-            padding: 15px;            border-radius: 0 5px 5px 0;
-
-            background-color: #f8f9fa;        }
-
-            border-radius: 5px;        
-
-            overflow-x: auto;        .final-answer {
-
-        }            background-color: #d4edda;
-
-                    border: 1px solid #c3e6cb;
-
-        .properties {            padding: 15px;
-
-            background-color: #e8f5e8;            border-radius: 5px;
-
-            padding: 15px;            margin: 15px 0;
-
-            border-radius: 5px;            font-weight: bold;
-
-            margin: 10px 0;        }
-
-        }        
-
-                .method-table {
-
-        .properties ul {            overflow-x: auto;
-
-            margin: 0;        }
-
-            padding-left: 20px;        
-
-        }        @media (max-width: 768px) {
-
-                    .container {
-
-        .properties li {                padding: 15px;
-
-            margin-bottom: 5px;            }
-
-        }            
-
-                    table {
-
-        .note {                font-size: 12px;
-
-            background-color: #fff3cd;            }
-
-            border-left: 4px solid #ffc107;            
-
-            padding: 10px 15px;            th, td {
-
-            margin: 15px 0;                padding: 8px;
-
-            border-radius: 0 5px 5px 0;            }
-
-        }        }
-
-            </style>
-
-        .final-answer {</head>
-
-            background-color: #d4edda;<body>
-
-            border: 1px solid #c3e6cb;    <div class="container">
-
-            padding: 15px;        <h1>Answers to All Questions Serially</h1>
-
-            border-radius: 5px;        
-
-            margin: 15px 0;        <h2>Question 1 (16th Batch TT)</h2>
-
-            font-weight: bold;        
-
-        }        <div class="question-part">
-
-                    <h3>a) What is a polynomial Equation and properties of it with example?</h3>
-
-        .method-table {        </div>
-
-            overflow-x: auto;        
-
-            -webkit-overflow-scrolling: touch;        <div class="solution">
-
-        }            <p>A polynomial equation is an expression consisting of variables and coefficients, involving only the operations of addition, subtraction, multiplication, and non-negative integer exponentiation of variables. The general form is:</p>
-
-                    
-
-        /* Mobile Styles */            <div class="equation-block">
-
-        @media (max-width: 768px) {                $$P(x) = a_n x^n + a_{n-1} x^{n-1} + \ldots + a_1 x + a_0 = 0$$
-
-            body {                where $a_n \neq 0$.
-
-                padding: 5px;            </div>
-
-                font-size: 14px;            
-
-            }            <div class="properties">
-
-                            <h4>Properties:</h4>
-
-            .container {                <ul>
-
-                padding: 10px;                    <li><strong>Degree:</strong> The highest power of the variable (n) determines the degree.</li>
-
-                margin: 5px;                    <li><strong>Roots:</strong> A polynomial of degree n has exactly n roots (real or complex), counting multiplicities (Fundamental Theorem of Algebra).</li>
-
-                border-radius: 5px;                    <li><strong>Continuity:</strong> Polynomials are continuous and smooth (differentiable) everywhere.</li>
-
-            }                    <li><strong>End Behavior:</strong> The sign of the leading coefficient ($a_n$) determines the behavior of the graph as $x$ approaches $\pm\infty$.</li>
-
-                                <li><strong>Multiplicity:</strong> If a root is repeated, it is called a multiple root, and the graph touches the x-axis at that point.</li>
-
-            h1 {                </ul>
-
-                font-size: 20px;            </div>
-
-                margin-bottom: 20px;            
-
-            }            <p><strong>Example:</strong> $x^2 - 5x + 6 = 0$ is a polynomial equation of degree 2. Its roots are $x = 2$ and $x = 3$.</p>
-
-                    </div>
-
-            h2 {        
-
-                font-size: 18px;        <div class="question-part">
-
-                margin-top: 30px;            <h3>b) Obtain the root of the equation $x^x = 100$ correct to three decimal places, using Falsi method.</h3>
-
-                margin-bottom: 15px;        </div>
-
-                padding-left: 10px;        
-
-            }        <div class="solution">
-
-                        <p>First, rewrite the equation as $f(x) = x^x - 100 = 0$.</p>
-
-            h3 {            <p>We need to find an interval [a, b] such that $f(a) \cdot f(b) < 0$.</p>
-
-                font-size: 16px;            
-
-                margin-top: 20px;            <p>$f(3) = 3^3 - 100 = 27 - 100 = -73$</p>
-
-                margin-bottom: 10px;            <p>$f(4) = 4^4 - 100 = 256 - 100 = 156$</p>
-
-            }            
-
-                        <p>Since $f(3) < 0$ and $f(4) > 0$, the root lies in [3, 4].</p>
-
-            h4 {            
-
-                font-size: 14px;            <h4>False Position (Regula Falsi) Method Table:</h4>
-
-                margin-top: 15px;            <div class="method-table">
-
-                margin-bottom: 8px;                <table>
-
-            }                    <thead>
-
-                                    <tr>
-
-            .question-part, .solution, .algorithm, .properties, .note, .final-answer {                            <th>Iteration</th>
-
-                padding: 10px;                            <th>a</th>
-
-                margin: 10px 0;                            <th>b</th>
-
-            }                            <th>f(a)</th>
-
-                                        <th>f(b)</th>
-
-            table {                            <th>c (False Position)</th>
-
-                font-size: 11px;                            <th>f(c)</th>
-
-                margin: 10px 0;                        </tr>
-
-            }                    </thead>
-
-                                <tbody>
-
-            th, td {                        <tr>
-
-                padding: 4px 2px;                            <td>1</td>
-
-                font-size: 10px;                            <td>3.0000</td>
-
-                line-height: 1.2;                            <td>4.0000</td>
-
-            }                            <td>-73.0000</td>
-
-                                        <td>156.0000</td>
-
-            th {                            <td>3.3188</td>
-
-                font-size: 9px;                            <td>-46.4242</td>
-
-                padding: 6px 3px;                        </tr>
-
-            }                        <tr>
-
-                                        <td>2</td>
-
-            .method-table {                            <td>3.3188</td>
-
-                margin: 10px -10px;                            <td>4.0000</td>
-
-                padding: 0 10px;                            <td>-46.4242</td>
-
-            }                            <td>156.0000</td>
-
-                                        <td>3.4743</td>
-
-            .equation-block {                            <td>-24.6992</td>
-
-                padding: 10px;                        </tr>
-
-                margin: 15px 0;                        <tr>
-
-                font-size: 14px;                            <td>3</td>
-
-            }                            <td>3.4743</td>
-
-                                        <td>4.0000</td>
-
-            .algorithm ol, .properties ul {                            <td>-24.6992</td>
-
-                padding-left: 15px;                            <td>156.0000</td>
-
-            }                            <td>3.5454</td>
-
-                                        <td>-11.4410</td>
-
-            .algorithm li, .properties li {                        </tr>
-
-                margin-bottom: 5px;                        <tr>
-
-                font-size: 13px;                            <td>4</td>
-
-            }                            <td>3.5454</td>
-
-                                        <td>4.0000</td>
-
-            /* Make math expressions more readable on mobile */                            <td>-11.4410</td>
-
-            .MathJax {                            <td>156.0000</td>
-
-                font-size: 90% !important;                            <td>3.5763</td>
-
-            }                            <td>-4.8996</td>
-
-        }                        </tr>
-
-                                <tr>
-
-        /* Extra small screens */                            <td>5</td>
-
-        @media (max-width: 480px) {                            <td>3.5763</td>
-
-            body {                            <td>4.0000</td>
-
-                font-size: 13px;                            <td>-4.8996</td>
-
-            }                            <td>156.0000</td>
-
-                                        <td>3.5891</td>
-
-            h1 {                            <td>-1.9433</td>
-
-                font-size: 18px;                        </tr>
-
-            }                        <tr>
-
-                                        <td>6</td>
-
-            h2 {                            <td>3.5891</td>
-
-                font-size: 16px;                            <td>4.0000</td>
-
-            }                            <td>-1.9433</td>
-
-                                        <td>156.0000</td>
-
-            h3 {                            <td>3.5941</td>
-
-                font-size: 14px;                            <td>-0.7568</td>
-
-            }                        </tr>
-
-                                    <tr>
-
-            table {                            <td>7</td>
-
-                font-size: 10px;                            <td>3.5941</td>
-
-            }                            <td>4.0000</td>
-
-                                        <td>-0.7568</td>
-
-            th, td {                            <td>156.0000</td>
-
-                padding: 3px 1px;                            <td>3.5960</td>
-
-                font-size: 9px;                            <td>-0.2933</td>
-
-            }                        </tr>
-
-                                    <tr>
-
-            th {                            <td>8</td>
-
-                font-size: 8px;                            <td>3.5960</td>
-
-            }                            <td>4.0000</td>
-
-                                        <td>-0.2933</td>
-
-            .MathJax {                            <td>156.0000</td>
-
-                font-size: 85% !important;                            <td>3.5967</td>
-
-            }                            <td>-0.1133</td>
-
-                                    </tr>
-
-            .equation-block {                        <tr>
-
-                font-size: 13px;                            <td>9</td>
-
-            }                            <td>3.5967</td>
-
-        }                            <td>4.0000</td>
-
-                                    <td>-0.1133</td>
-
-        /* Landscape orientation on mobile */                            <td>156.0000</td>
-
-        @media (max-width: 768px) and (orientation: landscape) {                            <td>3.5970</td>
-
-            .container {                            <td>-0.0437</td>
-
-                padding: 15px;                        </tr>
-
-            }                        <tr>
-
-                                        <td>10</td>
-
-            table {                            <td>3.5970</td>
-
-                font-size: 12px;                            <td>4.0000</td>
-
-            }                            <td>-0.0437</td>
-
-                                        <td>156.0000</td>
-
-            th, td {                            <td>3.5971</td>
-
-                padding: 5px 3px;                            <td>-0.0168</td>
-
-                font-size: 11px;                        </tr>
-
-            }                    </tbody>
-
-        }                </table>
-
-    </style>            </div>
-
-</head>            
-
-<body>            <div class="final-answer">
-
-    <div class="container">                The value of c converges to 3.597. Therefore, the root correct to three decimal places is <strong>x ≈ 3.597</strong>.
-
-        <h1>📚 Mathematical Questions & Answers</h1>            </div>
-
-                </div>
-
-        <div class="note">        
-
-            <h4>📱 Mobile Optimized Version</h4>        <h2>Question 2 (16th Batch TT)</h2>
-
-            <p>This page contains comprehensive solutions to 16 mathematical questions with proper formatting for mobile devices. All equations and tables are responsive and touch-friendly.</p>        
-
-        </div>        <div class="question-part">
-
-                    <h3>a) When does the Newton Raphson method fails and how to solve the issues?</h3>
-
-        <h2>Question 1 (16th Batch TT)</h2>        </div>
-
-                
-
-        <div class="question-part">        <div class="solution">
-
-            <h3>a) What is a polynomial Equation and properties of it with example?</h3>            <div class="properties">
-
-        </div>                <h4>Failure Cases:</h4>
-
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        
+        h2 {
+            color: #e74c3c;
+            border-left: 5px solid #e74c3c;
+            padding-left: 15px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        
+        h3 {
+            color: #8e44ad;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        
+        .question-part {
+            background-color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        
+        .solution {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-left: 4px solid #28a745;
+            margin: 15px 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+        
+        th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        tr:hover {
+            background-color: #e8f4f8;
+        }
+        
+        .algorithm {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        
+        .algorithm ol {
+            margin: 0;
+            padding-left: 20px;
+        }
+        
+        .equation-block {
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+        
+        .properties {
+            background-color: #e8f5e8;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        
+        .properties ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        
+        .note {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 10px 15px;
+            margin: 15px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .final-answer {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            font-weight: bold;
+        }
+        
+        .method-table {
+            overflow-x: auto;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            table {
+                font-size: 12px;
+            }
+            
+            th, td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Answers to All Questions Serially</h1>
+        
+        <h2>Question 1 (16th Batch TT)</h2>
+        
+        <div class="question-part">
+            <h3>a) What is a polynomial Equation and properties of it with example?</h3>
+        </div>
+        
+        <div class="solution">
+            <p>A polynomial equation is an expression consisting of variables and coefficients, involving only the operations of addition, subtraction, multiplication, and non-negative integer exponentiation of variables. The general form is:</p>
+            
+            <div class="equation-block">
+                $$P(x) = a_n x^n + a_{n-1} x^{n-1} + \ldots + a_1 x + a_0 = 0$$
+                where $a_n \neq 0$.
+            </div>
+            
+            <div class="properties">
+                <h4>Properties:</h4>
+                <ul>
+                    <li><strong>Degree:</strong> The highest power of the variable (n) determines the degree.</li>
+                    <li><strong>Roots:</strong> A polynomial of degree n has exactly n roots (real or complex), counting multiplicities (Fundamental Theorem of Algebra).</li>
+                    <li><strong>Continuity:</strong> Polynomials are continuous and smooth (differentiable) everywhere.</li>
+                    <li><strong>End Behavior:</strong> The sign of the leading coefficient ($a_n$) determines the behavior of the graph as $x$ approaches $\pm\infty$.</li>
+                    <li><strong>Multiplicity:</strong> If a root is repeated, it is called a multiple root, and the graph touches the x-axis at that point.</li>
+                </ul>
+            </div>
+            
+            <p><strong>Example:</strong> $x^2 - 5x + 6 = 0$ is a polynomial equation of degree 2. Its roots are $x = 2$ and $x = 3$.</p>
+        </div>
+        
+        <div class="question-part">
+            <h3>b) Obtain the root of the equation $x^x = 100$ correct to three decimal places, using Falsi method.</h3>
+        </div>
+        
+        <div class="solution">
+            <p>First, rewrite the equation as $f(x) = x^x - 100 = 0$.</p>
+            <p>We need to find an interval [a, b] such that $f(a) \cdot f(b) < 0$.</p>
+            
+            <p>$f(3) = 3^3 - 100 = 27 - 100 = -73$</p>
+            <p>$f(4) = 4^4 - 100 = 256 - 100 = 156$</p>
+            
+            <p>Since $f(3) < 0$ and $f(4) > 0$, the root lies in [3, 4].</p>
+            
+            <h4>False Position (Regula Falsi) Method Table:</h4>
+            <div class="method-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Iteration</th>
+                            <th>a</th>
+                            <th>b</th>
+                            <th>f(a)</th>
+                            <th>f(b)</th>
+                            <th>c (False Position)</th>
+                            <th>f(c)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>3.0000</td>
+                            <td>4.0000</td>
+                            <td>-73.0000</td>
+                            <td>156.0000</td>
+                            <td>3.3188</td>
+                            <td>-46.4242</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>3.3188</td>
+                            <td>4.0000</td>
+                            <td>-46.4242</td>
+                            <td>156.0000</td>
+                            <td>3.4743</td>
+                            <td>-24.6992</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>3.4743</td>
+                            <td>4.0000</td>
+                            <td>-24.6992</td>
+                            <td>156.0000</td>
+                            <td>3.5454</td>
+                            <td>-11.4410</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>3.5454</td>
+                            <td>4.0000</td>
+                            <td>-11.4410</td>
+                            <td>156.0000</td>
+                            <td>3.5763</td>
+                            <td>-4.8996</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>3.5763</td>
+                            <td>4.0000</td>
+                            <td>-4.8996</td>
+                            <td>156.0000</td>
+                            <td>3.5891</td>
+                            <td>-1.9433</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>3.5891</td>
+                            <td>4.0000</td>
+                            <td>-1.9433</td>
+                            <td>156.0000</td>
+                            <td>3.5941</td>
+                            <td>-0.7568</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>3.5941</td>
+                            <td>4.0000</td>
+                            <td>-0.7568</td>
+                            <td>156.0000</td>
+                            <td>3.5960</td>
+                            <td>-0.2933</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>3.5960</td>
+                            <td>4.0000</td>
+                            <td>-0.2933</td>
+                            <td>156.0000</td>
+                            <td>3.5967</td>
+                            <td>-0.1133</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>3.5967</td>
+                            <td>4.0000</td>
+                            <td>-0.1133</td>
+                            <td>156.0000</td>
+                            <td>3.5970</td>
+                            <td>-0.0437</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>3.5970</td>
+                            <td>4.0000</td>
+                            <td>-0.0437</td>
+                            <td>156.0000</td>
+                            <td>3.5971</td>
+                            <td>-0.0168</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="final-answer">
+                The value of c converges to 3.597. Therefore, the root correct to three decimal places is <strong>x ≈ 3.597</strong>.
+            </div>
+        </div>
+        
+        <h2>Question 2 (16th Batch TT)</h2>
+        
+        <div class="question-part">
+            <h3>a) When does the Newton Raphson method fails and how to solve the issues?</h3>
+        </div>
+        
+        <div class="solution">
+            <div class="properties">
+                <h4>Failure Cases:</h4>
+                <ul>
+                    <li><strong>Zero Derivative:</strong> If $f'(x_n) = 0$ at any iteration, the method fails as the iteration formula becomes undefined.</li>
+                    <li><strong>Poor Initial Guess:</strong> If the initial guess $x_0$ is not sufficiently close to the root, the method may diverge or oscillate.</li>
+                    <li><strong>Multiple Roots:</strong> The method converges very slowly for multiple roots (where $f(x) = 0$ and $f'(x) = 0$).</li>
+                    <li><strong>No Root:</strong> If the function has no real root, the method will not converge.</li>
+                    <li><strong>Oscillation:</strong> It can enter an infinite cycle oscillating between two values.</li>
+                </ul>
+            </div>
+            
+            <div class="properties">
+                <h4>Solutions:</h4>
+                <ul>
+                    <li><strong>For zero derivative:</strong> Use a different initial guess or switch to a bracketing method like bisection or false position for a few iterations.</li>
+                    <li><strong>For poor initial guess:</strong> Use a graphical method or a bracketing method to find a good initial approximation.</li>
+                    <li><strong>For multiple roots:</strong> Use the modified Newton-Raphson method: 
+                        $$x_{n+1} = x_n - m \frac{f(x_n)}{f'(x_n)}$$
+                        where $m$ is the multiplicity of the root.</li>
+                    <li><strong>For oscillation:</strong> Use a method that guarantees convergence, like the bisection method, or implement a damping factor.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="question-part">
+            <h3>b) Compute the real root of $x \log_{10} x - 1.2 = 0$ up to four decimal places using Newton Raphson method.</h3>
+        </div>
+        
+        <div class="solution">
+            <p>Define the function: $f(x) = x \log_{10} x - 1.2$</p>
+            <p>Its derivative is: $f'(x) = \log_{10} x + \frac{1}{\ln(10)}$</p>
+            
+            <p>The Newton-Raphson formula is:</p>
+            <div class="equation-block">
+                $$x_{n+1} = x_n - \frac{x_n \log_{10}(x_n) - 1.2}{\log_{10}(x_n) + \frac{1}{\ln(10)}}$$
+            </div>
+            
+            <p>Choose $x_0 = 2.5$ (a guess based on trying values).</p>
+            
+            <h4>Newton-Raphson Method Table for $x \log_{10} x - 1.2 = 0$:</h4>
+            <div class="method-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>n</th>
+                            <th>$x_n$</th>
+                            <th>$f(x_n)$</th>
+                            <th>$f'(x_n)$</th>
+                            <th>$x_{n+1}$</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>0</td>
+                            <td>2.5000</td>
+                            <td>-0.2052</td>
+                            <td>0.8323</td>
+                            <td>2.7466</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>2.7466</td>
+                            <td>0.0050</td>
+                            <td>0.8733</td>
+                            <td>2.7409</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>2.7409</td>
+                            <td>≈ 0.0000</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="final-answer">
+                The root correct to four decimal places is <strong>x ≈ 2.7409</strong>.
+            </div>
+        </div>
+        
+        <h2>Question 3 (14th Batch Final)</h2>
+        
+        <div class="question-part">
+            <h3>a) Write down the algorithm for the false position iteration method.</h3>
+        </div>
+        
+        <div class="solution">
+            <div class="algorithm">
+                <h4>False Position (Regula Falsi) Algorithm:</h4>
+                <ol>
+                    <li><strong>Start:</strong> Choose initial guesses $a$ and $b$ such that $f(a) \cdot f(b) < 0$.</li>
+                    <li><strong>Iterate:</strong> For n = 0, 1, 2, ... until convergence:
                         <ul>
-
-        <div class="solution">                    <li><strong>Zero Derivative:</strong> If $f'(x_n) = 0$ at any iteration, the method fails as the iteration formula becomes undefined.</li>
-
-            <p>A polynomial equation is an expression consisting of variables and coefficients, involving only the operations of addition, subtraction, multiplication, and non-negative integer exponentiation of variables. The general form is:</p>                    <li><strong>Poor Initial Guess:</strong> If the initial guess $x_0$ is not sufficiently close to the root, the method may diverge or oscillate.</li>
-
-                                <li><strong>Multiple Roots:</strong> The method converges very slowly for multiple roots (where $f(x) = 0$ and $f'(x) = 0$).</li>
-
-            <div class="equation-block">                    <li><strong>No Root:</strong> If the function has no real root, the method will not converge.</li>
-
-                $$P(x) = a_n x^n + a_{n-1} x^{n-1} + \ldots + a_1 x + a_0 = 0$$                    <li><strong>Oscillation:</strong> It can enter an infinite cycle oscillating between two values.</li>
-
-                where $a_n \neq 0$.                </ul>
-
-            </div>            </div>
-
-                        
-
-            <div class="properties">            <div class="properties">
-
-                <h4>Properties:</h4>                <h4>Solutions:</h4>
-
-                <ul>                <ul>
-
-                    <li><strong>Degree:</strong> The highest power of the variable (n) determines the degree.</li>                    <li><strong>For zero derivative:</strong> Use a different initial guess or switch to a bracketing method like bisection or false position for a few iterations.</li>
-
-                    <li><strong>Roots:</strong> A polynomial of degree n has exactly n roots (real or complex), counting multiplicities.</li>                    <li><strong>For poor initial guess:</strong> Use a graphical method or a bracketing method to find a good initial approximation.</li>
-
-                    <li><strong>Continuity:</strong> Polynomials are continuous and smooth everywhere.</li>                    <li><strong>For multiple roots:</strong> Use the modified Newton-Raphson method: 
-
-                    <li><strong>End Behavior:</strong> The sign of the leading coefficient ($a_n$) determines the graph behavior as $x \to \pm\infty$.</li>                        $$x_{n+1} = x_n - m \frac{f(x_n)}{f'(x_n)}$$
-
-                    <li><strong>Multiplicity:</strong> If a root is repeated, the graph touches the x-axis at that point.</li>                        where $m$ is the multiplicity of the root.</li>
-
-                </ul>                    <li><strong>For oscillation:</strong> Use a method that guarantees convergence, like the bisection method, or implement a damping factor.</li>
-
-            </div>                </ul>
-
-                        </div>
-
-            <p><strong>Example:</strong> $x^2 - 5x + 6 = 0$ has roots $x = 2$ and $x = 3$.</p>        </div>
-
-        </div>        
-
-                <div class="question-part">
-
-        <div class="question-part">            <h3>b) Compute the real root of $x \log_{10} x - 1.2 = 0$ up to four decimal places using Newton Raphson method.</h3>
-
-            <h3>b) Find root of $x^x = 100$ using False Position method (3 decimal places)</h3>        </div>
-
-        </div>        
-
-                <div class="solution">
-
-        <div class="solution">            <p>Define the function: $f(x) = x \log_{10} x - 1.2$</p>
-
-            <p>Rewrite as $f(x) = x^x - 100 = 0$. Find interval where $f(a) \cdot f(b) < 0$:</p>            <p>Its derivative is: $f'(x) = \log_{10} x + \frac{1}{\ln(10)}$</p>
-
-                        
-
-            <p>$f(3) = 27 - 100 = -73$ (negative)</p>            <p>The Newton-Raphson formula is:</p>
-
-            <p>$f(4) = 256 - 100 = 156$ (positive)</p>            <div class="equation-block">
-
-                            $$x_{n+1} = x_n - \frac{x_n \log_{10}(x_n) - 1.2}{\log_{10}(x_n) + \frac{1}{\ln(10)}}$$
-
-            <p>Root lies in [3, 4].</p>            </div>
-
-                        
-
-            <h4>False Position Method:</h4>            <p>Choose $x_0 = 2.5$ (a guess based on trying values).</p>
-
-            <div class="method-table">            
-
-                <table>            <h4>Newton-Raphson Method Table for $x \log_{10} x - 1.2 = 0$:</h4>
-
-                    <thead>            <div class="method-table">
-
-                        <tr>                <table>
-
-                            <th>n</th>                    <thead>
-
-                            <th>a</th>                        <tr>
-
-                            <th>b</th>                            <th>n</th>
-
-                            <th>f(a)</th>                            <th>$x_n$</th>
-
-                            <th>f(b)</th>                            <th>$f(x_n)$</th>
-
-                            <th>c</th>                            <th>$f'(x_n)$</th>
-
-                            <th>f(c)</th>                            <th>$x_{n+1}$</th>
-
-                        </tr>                        </tr>
-
-                    </thead>                    </thead>
-
-                    <tbody>                    <tbody>
-
-                        <tr>                        <tr>
-
-                            <td>1</td>                            <td>0</td>
-
-                            <td>3.000</td>                            <td>2.5000</td>
-
-                            <td>4.000</td>                            <td>-0.2052</td>
-
-                            <td>-73.0</td>                            <td>0.8323</td>
-
-                            <td>156.0</td>                            <td>2.7466</td>
-
-                            <td>3.319</td>                        </tr>
-
-                            <td>-46.4</td>                        <tr>
-
-                        </tr>                            <td>1</td>
-
-                        <tr>                            <td>2.7466</td>
-
-                            <td>2</td>                            <td>0.0050</td>
-
-                            <td>3.319</td>                            <td>0.8733</td>
-
-                            <td>4.000</td>                            <td>2.7409</td>
-
-                            <td>-46.4</td>                        </tr>
-
-                            <td>156.0</td>                        <tr>
-
-                            <td>3.474</td>                            <td>2</td>
-
-                            <td>-24.7</td>                            <td>2.7409</td>
-
-                        </tr>                            <td>≈ 0.0000</td>
-
-                        <tr>                            <td>-</td>
-
-                            <td>3</td>                            <td>-</td>
-
-                            <td>3.474</td>                        </tr>
-
-                            <td>4.000</td>                    </tbody>
-
-                            <td>-24.7</td>                </table>
-
-                            <td>156.0</td>            </div>
-
-                            <td>3.545</td>            
-
-                            <td>-11.4</td>            <div class="final-answer">
-
-                        </tr>                The root correct to four decimal places is <strong>x ≈ 2.7409</strong>.
-
-                        <tr>            </div>
-
-                            <td>4</td>        </div>
-
-                            <td>3.545</td>        
-
-                            <td>4.000</td>        <h2>Question 3 (14th Batch Final)</h2>
-
-                            <td>-11.4</td>        
-
-                            <td>156.0</td>        <div class="question-part">
-
-                            <td>3.576</td>            <h3>a) Write down the algorithm for the false position iteration method.</h3>
-
-                            <td>-4.9</td>        </div>
-
-                        </tr>        
-
-                        <tr>        <div class="solution">
-
-                            <td>5</td>            <div class="algorithm">
-
-                            <td>3.576</td>                <h4>False Position (Regula Falsi) Algorithm:</h4>
-
-                            <td>4.000</td>                <ol>
-
-                            <td>-4.9</td>                    <li><strong>Start:</strong> Choose initial guesses $a$ and $b$ such that $f(a) \cdot f(b) < 0$.</li>
-
-                            <td>156.0</td>                    <li><strong>Iterate:</strong> For n = 0, 1, 2, ... until convergence:
-
-                            <td>3.589</td>                        <ul>
-
-                            <td>-1.9</td>                            <li>Calculate $c = \frac{a \cdot f(b) - b \cdot f(a)}{f(b) - f(a)}$</li>
-
-                        </tr>                            <li>Calculate $f(c)$</li>
-
-                    </tbody>                            <li>If $|f(c)| < \epsilon$ (a very small tolerance), then stop. $c$ is the root.</li>
-
-                </table>                            <li>Else, check the sign:
-
-            </div>                                <ul>
-
-                                                <li>If $f(a) \cdot f(c) < 0$, then the root lies in $[a, c]$. Set $b = c$.</li>
-
-            <div class="final-answer">                                    <li>Else, the root lies in $[c, b]$. Set $a = c$.</li>
-
-                <strong>Answer:</strong> x ≈ 3.597 (to 3 decimal places)                                </ul>
-
-            </div>                            </li>
-
-        </div>                        </ul>
-
+                            <li>Calculate $c = \frac{a \cdot f(b) - b \cdot f(a)}{f(b) - f(a)}$</li>
+                            <li>Calculate $f(c)$</li>
+                            <li>If $|f(c)| < \epsilon$ (a very small tolerance), then stop. $c$ is the root.</li>
+                            <li>Else, check the sign:
+                                <ul>
+                                    <li>If $f(a) \cdot f(c) < 0$, then the root lies in $[a, c]$. Set $b = c$.</li>
+                                    <li>Else, the root lies in $[c, b]$. Set $a = c$.</li>
+                                </ul>
                             </li>
-
-        <h2>Question 2 (16th Batch TT)</h2>                    <li><strong>End</strong></li>
-
-                        </ol>
-
-        <div class="question-part">            </div>
-
-            <h3>a) When does Newton-Raphson method fail and solutions?</h3>        </div>
-
-        </div>        
-
-                <div class="question-part">
-
-        <div class="solution">            <h3>b) When does the Newton-Raphson method fail?</h3>
-
-            <div class="properties">        </div>
-
-                <h4>Failure Cases:</h4>        
-
-                <ul>        <div class="solution">
-
-                    <li><strong>Zero Derivative:</strong> $f'(x_n) = 0$ makes formula undefined</li>            <p>(Answered in detail in Question 2a above). It fails when the derivative is zero, the initial guess is poor, for multiple roots, or if the function causes oscillation.</p>
-
-                    <li><strong>Poor Initial Guess:</strong> May cause divergence or oscillation</li>        </div>
-
-                    <li><strong>Multiple Roots:</strong> Very slow convergence when $f(x) = f'(x) = 0$</li>        
-
-                    <li><strong>No Real Root:</strong> Method won't converge</li>        <div class="question-part">
-
-                    <li><strong>Oscillation:</strong> Can cycle between two values</li>            <h3>c) Apply the Newton-Raphson method to find the double root of the equation $f(x) = x^3 + x^2 - x - 10$ Up to three iterations where the root is near 0.7.</h3>
-
-                </ul>        </div>
-
-            </div>        
-
-                    <div class="solution">
-
-            <div class="properties">            <p>First, check if it's a double root. A double root is also a root of the derivative.</p>
-
-                <h4>Solutions:</h4>            <p>$f(x) = x^3 + x^2 - x - 10$</p>
-
-                <ul>            <p>$f'(x) = 3x^2 + 2x - 1$</p>
-
-                    <li><strong>Zero derivative:</strong> Use different initial guess or switch to bisection method</li>            
-
-                    <li><strong>Poor guess:</strong> Use graphical or bracketing methods for better approximation</li>            <p>Check $f(0.7) = (0.343) + (0.49) - (0.7) - 10 = -9.867$</p>
-
-                    <li><strong>Multiple roots:</strong> Use modified formula: $x_{n+1} = x_n - m\frac{f(x_n)}{f'(x_n)}$ where m = multiplicity</li>            <p>Check $f'(0.7) = 3 \times (0.49) + 2 \times (0.7) - 1 = 1.47 + 1.4 - 1 = 1.87$</p>
-
-                    <li><strong>Oscillation:</strong> Use bisection method or damping factor</li>            
-
-                </ul>            <p>Since $f(0.7) \neq 0$ and $f'(0.7) \neq 0$, 0.7 is not a double root. There might be a misinterpretation. Let's proceed with the standard method for a root near 0.7.</p>
-
-            </div>            
-
-        </div>            <h4>Newton-Raphson Method Table:</h4>
-
-                    <div class="method-table">
-
-        <div class="question-part">                <table>
-
-            <h3>b) Find root of $x \log_{10} x - 1.2 = 0$ using Newton-Raphson (4 decimal places)</h3>                    <thead>
-
-        </div>                        <tr>
-
-                                    <th>n</th>
-
-        <div class="solution">                            <th>$x_n$</th>
-
-            <p>Function: $f(x) = x \log_{10} x - 1.2$</p>                            <th>$f(x_n)$</th>
-
-            <p>Derivative: $f'(x) = \log_{10} x + \frac{1}{\ln(10)}$</p>                            <th>$f'(x_n)$</th>
-
-                                        <th>$x_{n+1}$</th>
-
-            <p>Newton-Raphson formula:</p>                        </tr>
-
-            <div class="equation-block">                    </thead>
-
-                $$x_{n+1} = x_n - \frac{x_n \log_{10}(x_n) - 1.2}{\log_{10}(x_n) + \frac{1}{\ln(10)}}$$                    <tbody>
-
-            </div>                        <tr>
-
-                                        <td>0</td>
-
-            <p>Starting with $x_0 = 2.5$:</p>                            <td>0.7000</td>
-
-                                        <td>-9.8670</td>
-
-            <div class="method-table">                            <td>1.8700</td>
-
-                <table>                            <td>5.9770</td>
-
-                    <thead>                        </tr>
-
-                        <tr>                        <tr>
-
-                            <th>n</th>                            <td>1</td>
-
-                            <th>$x_n$</th>                            <td>5.9770</td>
-
-                            <th>$f(x_n)$</th>                            <td>232.35</td>
-
-                            <th>$f'(x_n)$</th>                            <td>119.12</td>
-
-                            <th>$x_{n+1}$</th>                            <td>4.0260</td>
-
-                        </tr>                        </tr>
-
-                    </thead>                        <tr>
-
-                    <tbody>                            <td>2</td>
-
-                        <tr>                            <td>4.0260</td>
-
-                            <td>0</td>                            <td>67.444</td>
-
-                            <td>2.5000</td>                            <td>58.682</td>
-
-                            <td>-0.2052</td>                            <td>2.8766</td>
-
-                            <td>0.8323</td>                        </tr>
-
-                            <td>2.7466</td>                    </tbody>
-
-                        </tr>                </table>
-
-                        <tr>            </div>
-
-                            <td>1</td>            
-
-                            <td>2.7466</td>            <div class="note">
-
-                            <td>0.0050</td>                <strong>Note:</strong> The method is diverging because 0.7 is not a good initial guess. The actual root is near 2. For a double root, we need a different function. This part seems to have an error in the question or our understanding.
-
-                            <td>0.8733</td>            </div>
-
-                            <td>2.7409</td>        </div>
-
-                        </tr>        
-
-                        <tr>        <h2>Question 4 (14th Batch Final)</h2>
-
-                            <td>2</td>        
-
-                            <td>2.7409</td>        <div class="question-part">
-
-                            <td>≈ 0.0000</td>            <h3>a) Find the first approximate root of the equation $x^3 - 2x^2 - 4 = 0$ by using bisection method.</h3>
-
-                            <td>-</td>        </div>
-
-                            <td>-</td>        
-
-                        </tr>        <div class="solution">
-
-                    </tbody>            <p>We need an interval [a, b] where f(a) * f(b) < 0.</p>
-
-                </table>            
-
-            </div>            <p>$f(0) = (0) - (0) - 4 = -4$</p>
-
-                        <p>$f(1) = (1) - (2) - 4 = -5$</p>
-
-            <div class="final-answer">            <p>$f(2) = (8) - (8) - 4 = -4$</p>
-
-                <strong>Answer:</strong> x ≈ 2.7409 (to 4 decimal places)            <p>$f(3) = (27) - (18) - 4 = +5$</p>
-
-            </div>            
-
-        </div>            <p>Since $f(2) = -4$ and $f(3) = +5$, a root lies in [2, 3].</p>
-
-                    
-
-        <div style="margin-top: 50px; padding: 20px; background-color: #e8f5e8; border-radius: 10px; text-align: center;">            <h4>Bisection Method Table (First Iteration):</h4>
-
-            <h4>🚀 Deployed Successfully!</h4>            <div class="method-table">
-
-            <p><strong>This mobile-optimized mathematical solutions page is now live!</strong></p>                <table>
-
-            <p>✅ Responsive design for all screen sizes<br>                    <thead>
-
-               ✅ Touch-friendly tables and equations<br>                        <tr>
-
-               ✅ Optimized font sizes for mobile reading<br>                            <th>Iteration</th>
-
-               ✅ Horizontal scrolling for wide tables</p>                            <th>a</th>
-
-        </div>                            <th>b</th>
-
-    </div>                            <th>c=(a+b)/2</th>
-
-</body>                            <th>f(a)</th>
-
-</html>                            <th>f(b)</th>
+                        </ul>
+                    </li>
+                    <li><strong>End</strong></li>
+                </ol>
+            </div>
+        </div>
+        
+        <div class="question-part">
+            <h3>b) When does the Newton-Raphson method fail?</h3>
+        </div>
+        
+        <div class="solution">
+            <p>(Answered in detail in Question 2a above). It fails when the derivative is zero, the initial guess is poor, for multiple roots, or if the function causes oscillation.</p>
+        </div>
+        
+        <div class="question-part">
+            <h3>c) Apply the Newton-Raphson method to find the double root of the equation $f(x) = x^3 + x^2 - x - 10$ Up to three iterations where the root is near 0.7.</h3>
+        </div>
+        
+        <div class="solution">
+            <p>First, check if it's a double root. A double root is also a root of the derivative.</p>
+            <p>$f(x) = x^3 + x^2 - x - 10$</p>
+            <p>$f'(x) = 3x^2 + 2x - 1$</p>
+            
+            <p>Check $f(0.7) = (0.343) + (0.49) - (0.7) - 10 = -9.867$</p>
+            <p>Check $f'(0.7) = 3 \times (0.49) + 2 \times (0.7) - 1 = 1.47 + 1.4 - 1 = 1.87$</p>
+            
+            <p>Since $f(0.7) \neq 0$ and $f'(0.7) \neq 0$, 0.7 is not a double root. There might be a misinterpretation. Let's proceed with the standard method for a root near 0.7.</p>
+            
+            <h4>Newton-Raphson Method Table:</h4>
+            <div class="method-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>n</th>
+                            <th>$x_n$</th>
+                            <th>$f(x_n)$</th>
+                            <th>$f'(x_n)$</th>
+                            <th>$x_{n+1}$</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>0</td>
+                            <td>0.7000</td>
+                            <td>-9.8670</td>
+                            <td>1.8700</td>
+                            <td>5.9770</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>5.9770</td>
+                            <td>232.35</td>
+                            <td>119.12</td>
+                            <td>4.0260</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>4.0260</td>
+                            <td>67.444</td>
+                            <td>58.682</td>
+                            <td>2.8766</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="note">
+                <strong>Note:</strong> The method is diverging because 0.7 is not a good initial guess. The actual root is near 2. For a double root, we need a different function. This part seems to have an error in the question or our understanding.
+            </div>
+        </div>
+        
+        <h2>Question 4 (14th Batch Final)</h2>
+        
+        <div class="question-part">
+            <h3>a) Find the first approximate root of the equation $x^3 - 2x^2 - 4 = 0$ by using bisection method.</h3>
+        </div>
+        
+        <div class="solution">
+            <p>We need an interval [a, b] where f(a) * f(b) < 0.</p>
+            
+            <p>$f(0) = (0) - (0) - 4 = -4$</p>
+            <p>$f(1) = (1) - (2) - 4 = -5$</p>
+            <p>$f(2) = (8) - (8) - 4 = -4$</p>
+            <p>$f(3) = (27) - (18) - 4 = +5$</p>
+            
+            <p>Since $f(2) = -4$ and $f(3) = +5$, a root lies in [2, 3].</p>
+            
+            <h4>Bisection Method Table (First Iteration):</h4>
+            <div class="method-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Iteration</th>
+                            <th>a</th>
+                            <th>b</th>
+                            <th>c=(a+b)/2</th>
+                            <th>f(a)</th>
+                            <th>f(b)</th>
                             <th>f(c)</th>
                         </tr>
                     </thead>
